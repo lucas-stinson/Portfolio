@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Stinson's ePortfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("RJkoSt7wR_cUEhl5j");
+        })();
+    </script>
+</head>
+
+<body onmousemove="moveBackground(event)">
+    <section id="landing">
+        <nav>
+            <figure>
+                <img src="./assets/Lucas Stinson Logo.png" class="nav_logo" alt="">
+            </figure>
+            <ul class="nav_link-list">
+                <li class="nav_link">
+                    <a href="#" class="
+                    nav_link-anchor
+                    link_hover-effect
+                    link_hover-effect-black
+                    " onclick="toggleModal()">About</a>
+                </li>
+                <li class="nav_link">
+                    <a href="#languages" class="
+                    nav_link-anchor
+                    link_hover-effect
+                    link_hover-effect-black
+                    ">Languages</a>
+                </li>
+                <li class="nav_link">
+                    <a href="#projects" class="
+                    nav_link-anchor
+                    link_hover-effect
+                    link_hover-effect-black
+                    ">Projects</a>
+                </li>
+                <li class="nav_link">
+                    <a href="#" class="
+                    nav_link-anchor
+                    link_hover-effect
+                    link_hover-effect-black
+                    " onclick="toggleModal()">Contact</a>
+                </li>
+                <li class="nav_link click_effect" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav_link-anchor
+                    link_hover-effect
+                    link_hover-effect-black
+                    "><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header>
+            <div class="header_content">
+                <h1 class="title">Hello</h1>
+                <h1 class="title site_theme">I'm Lucas</h1>
+                <p class="header_para">I'm a <b class="site_theme">Frontend Software Developer</b> who needs to think
+                    about more information regarding his intro paragraph. Please hire me, <b class="site_theme">I'm
+                        desperate.</b>
+                    <br>
+                    Here's some more <b class="site_theme link_hover-effect link_hover-effect-theme click_effect"
+                        onclick="toggleModal()">about me.</b>
+                </p>
+                <div class="social_links">
+                    <a href="https://www.linkedin.com" target="_blank" class="social_link click_effect linkedin_link">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social_link-popup">See my Linkedin Profile</span>
+                    </a>
+
+                    <a href="https://www.github.com" target="_blank" class="social_link click_effect github_link">
+                        <i class="fab fa-github"></i>
+                        <span class="social_link-popup">Look at my Github Profile</span>
+                    </a>
+                    <a href="./assets/David Bragg Resume.pdf" target="_blank"
+                        class="social_link click_effect resume_link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="social_link-popup">View my Resume</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <button class="email_button click_effect" onclick="toggleModal()">
+            <a href="#" class="email_link"><i class="fas fa-envelope"></i></a>
+        </button>
+        <a href="#languages" class="scroll_button">
+            <div class="scroll_icon click_effect"></div>
+        </a>
+        <div class="modal">
+            <div class="modal_half modal_about">
+                <h3 class="modal_title modal_title-about">
+                    Here's a bit more <span class="site_theme">about me</span>
+                </h3>
+                <h4 class="modal_subtitle modal_subtitle-about">
+                    Frontend Software Engineer
+                </h4>
+                <div class="modal_about-info">
+                    <p class="modal_para">
+                        Lorem ipsum, dolor sit <b class="site_theme">Important</b> amet consectetur adipisicing elit. At
+                        omnis corrupti
+                        laborum similique vel sint?
+                        <br>
+                        Lorem ipsum dolor sit amet <b class="site_theme">Important</b> consectetur adipisicing elit. Eos
+                        nam
+                        unde soluta magni culpa consectetur
+                        veniam minima laboriosam vitae quod.
+                    </p>
+                    <figure class="modal_img-wrapper">
+                        <img src="./assets/placeholder.jpeg" alt="">
+                    </figure>
+                </div>
+            </div>
+            <div class="modal_half modal_contact">
+                <h3 class="modal_title modal_contact-title">
+                    Let's have a chat
+                </h3>
+                <h4 class="modal_subtitle modal_contact-subtitle">
+                    I'm open to new oppurtunities
+                </h4>
+                <form id="contact_form" onsubmit='contact2(event)'>
+                    <div class="form_item">
+                        <label class="form_item-label">Name</label>
+                        <input class="input" name="user_name" type="text">
+                    </div>
+                    <div class="form_item">
+                        <label class="form_item-label">E-mail</label>
+                        <input class="input" name="user_email" type="email">
+                    </div>
+                    <div class="form_item">
+                        <label class="form_item-label">Message</label>
+                        <textarea class="input" name="message" type="text"></textarea>
+                    </div>
+                    <button id="contact_submit" class="form_submit">Send</button>
+                </form>
+                <div class="modal_overlay modal_overlay-loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal_overlay modal_overlay-success">
+                    Thanks for the message! I will respond to you as soon as I can.
+                </div>
+                <i class="fas fa-times modal_exit click_effect" onclick="toggleModal()"></i>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape-0">
+        <img src="./assets/circle.svg" class="shape shape-1">
+        <img src="./assets/squiggly.svg" class="shape shape-2">
+        <img src="./assets/circle.svg" class="shape shape-3">
+        <img src="./assets/triangle.svg" class="shape shape-4">
+        <img src="./assets/circle.svg" class="shape shape-5">
+        <img src="./assets/squiggly.svg" class="shape shape-6">
+        <img src="./assets/circle.svg" class="shape shape-7">
+        <img src="./assets/semi circle.svg" class="shape shape-8">
+    </section>
+    <section id="languages">
+        <div class="container">
+            <div class="row">
+                <h1 class="section_title">This is my <span class="site_theme">technology stack</span></h1>
+                <div class="languages_wrapper">
+                    <figure class="language">
+                        <img src="./assets/html.png" class="language_img" alt="">
+                        <span class="language_name">HTML</span>
+                    </figure>
+                    <figure class="language">
+                        <img src="./assets/css.png" class="language_img" alt="">
+                        <span class="language_name">CSS</span>
+                    </figure>
+                    <figure class="language">
+                        <img src="./assets/js.png" class="language_img" alt="">
+                        <span class="language_name">Javascript</span>
+                    </figure>
+                    <figure class="language">
+                        <img src="./assets/react.png" class="language_img" alt="">
+                        <span class="language_name">React</span>
+                    </figure>
+                    <figure class="language">
+                        <img src="./assets/java.png" class="language_img" alt="">
+                        <span class="language_name">Java</span>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section_title">
+                    Here are some of my <span class="site_theme">projects</span>
+                </h1>
+                <ul class="project_list">
+                    <li class="project">
+                        <div class="project_wrapper">
+                            <img src="./assets/library.PNG" class="project_img" alt="">
+                            <div class="project_wrapper-background"></div>
+                            <div class="project_description">
+                                <h3 class="project_description-title">
+                                    Library eCommerce website
+                                </h3>
+                                <h4 class="project_description-subtitle">
+                                    HTML, CSS, Javascript
+                                </h4>
+                                <p class="project_description-para">
+                                    An eCommerce Website for selling books that has a nice and responsive design. The
+                                    home page uses basic Javascript to open/close a burger menu on small-width devices,
+                                    while the browse book sections uses Javascript to load and sort the books from an
+                                    array of information.
+                                </p>
+                                <div class="project_description-links">
+                                    <a href="https://github.com/lucas-stinson/eCommerceProject" target="_blank"
+                                        class="project_description-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://lucas-stinson.github.io/eCommerceProject/index.html"
+                                        target="_blank" class="project_description-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="project">
+                        <div class="project_wrapper">
+                            <img src="./assets/blinker mockup.png" class="project_img" alt="">
+                            <div class="project_wrapper-background"></div>
+                            <div class="project_description">
+                                <h3 class="project_description-title">
+                                    Project Placeholder
+                                </h3>
+                                <h4 class="project_description-subtitle">
+                                    HTML, CSS, Javascript, React
+                                </h4>
+                                <p class="project_description-para">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo dolorum blanditiis,
+                                    eveniet natus quis reprehenderit. Nulla accusamus consequatur esse laboriosam quam
+                                    enim corporis ipsa aspernatur sapiente porro! Culpa, rerum quam?
+                                </p>
+                                <div class="project_description-links">
+                                    <a href="" class="project_description-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="" class="project_description-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer_row">
+                <figure class="footer_logo-wrapper">
+                    <img src="./assets/Lucas Stinson Logo.png" alt="" class="footer_logo">
+                </figure>
+                <div class="footer_social-list">
+                    <a href="https://www.github.com" target="_blank" class="
+                footer_social-link
+                link_hover-effect
+                link_hover-effect-white 
+                ">GitHub</a>
+                    <a href="https://www.linkedin.com" target="_blank" class="
+                footer_social-link
+                link_hover-effect
+                link_hover-effect-white 
+                ">Linkedin</a>
+                    <a href="#" class="
+                footer_social-link
+                link_hover-effect
+                link_hover-effect-white 
+                " onclick="toggleModal()">Email</a>
+                    <a href="./assets/David Bragg Resume.pdf" target="_blank" class="
+                footer_social-link
+                link_hover-effect
+                link_hover-effect-white 
+                ">Resume</a>
+                </div>
+                <div class="footer_copyright">Made by Lucas Stinson</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
